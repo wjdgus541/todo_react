@@ -32,7 +32,7 @@ function CreateCategory(){
             <input {...register("category", {
                 required:"Please write new Category"})} 
                 placeholder="Add a category" />
-            <button>Add</button>
+            <button>+</button>
         </form>
     )
 }

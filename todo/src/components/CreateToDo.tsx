@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { categoryState, toDoState, IToDo, toDoSelector } from "../atoms";
+import styled from "styled-components";
 
 interface IForm {
     toDo: string;
@@ -25,7 +26,6 @@ function CreateToDo(){
         console.log(selectedToDos);
     }, [nowCategory]);
     useEffect(() => {
-
         localStorage.setItem(nowCategory, JSON.stringify(selectedToDos));
     }, [toDos]);
     
@@ -35,7 +35,7 @@ function CreateToDo(){
                 required: "Please write a To Do"})} 
                 placeholder="Write a to do"
             />
-            <button>Add</button>
+            <button>+</button>
         </form>
     );
 }
